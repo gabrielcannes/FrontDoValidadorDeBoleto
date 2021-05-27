@@ -23,8 +23,9 @@ export function LeitorDeArquivo() {
           const formData = new FormData() //cria um formulario pelo js
           formData.append('file', textFile, textFile.name) //adiciona um campo com nome file, objeto do arquivo e nome do arquivo
           
-          const rawResponse = await fetch('https://clipplycloud-api.herokuapp.com/user/teste-coelhasso/files', {
+          const rawResponse = await fetch('https://github.com/pedro-ivo-molina/bank-slip-validator/validate', {
             method: 'POST',
+            mode: 'no-cors',
             body: formData
           })
         
