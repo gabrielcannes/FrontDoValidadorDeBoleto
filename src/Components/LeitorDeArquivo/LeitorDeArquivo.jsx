@@ -1,3 +1,4 @@
+import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
@@ -51,13 +52,33 @@ export function LeitorDeArquivo() {
                 Enviar
             </Button>
         </div>
-        {!!resposta && (
-          <div>
-          {resposta.errors.header_errors.map(errors => (<p>{errors}</p>))}
-          {resposta.errors.body_errors.map(errors => (<p>{errors}</p>))}
-          {resposta.errors.footer_errors.map(errors => (<p>{errors}</p>))}
-          {resposta.annotations.map(opcional => (<p>{opcional}</p>))}
-          </div>
+        {!!resposta && (   
+            <Box component="div" display="inline" p={1} m={1} bgcolor="#212121">
+             
+              {resposta.errors.header_errors.map(errors => (
+                <Box component="span" display="block" p={1} m={1} bgcolor= '#272c34'>
+                  <p>Cabeçalho</p>
+                  <p>{errors}</p> 
+                </Box>))}
+
+              {resposta.errors.body_errors.map(errors => (
+                <Box component="span" display="block" p={1} m={1} bgcolor= '#272c34'>
+                  <p>Detalhe</p>
+                  <p>{errors}</p> 
+                </Box>))}
+
+              {resposta.errors.footer_errors.map(errors => (
+                <Box component="span" display="block" p={1} m={1} bgcolor= '#272c34'>
+                  <p>Rodapé</p>
+                  <p>{errors}</p> 
+                </Box>))}
+
+              {resposta.annotations.map(errors => (
+                <Box component="span" display="block" p={1} m={1} bgcolor= '#272c34'>
+                  <p>Opcional</p>
+                  <p>{errors}</p> 
+                </Box>))}      
+                </Box>
         )}       
       </Grid>    
    </form>
