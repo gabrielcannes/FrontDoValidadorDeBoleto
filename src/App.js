@@ -1,5 +1,4 @@
 import { LeitorDeArquivo } from './Components/LeitorDeArquivo/LeitorDeArquivo.jsx'
-import { ReportDeArquivo } from './Components/ReportDeArquivo'
 
 import 'fontsource-roboto';
 
